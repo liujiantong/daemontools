@@ -19,9 +19,7 @@ http://cr.yp.to/daemontools.html
 1. $ cat /usr/lib/systemd/system/daemontools.service
 ```
     [Unit]
-    
     Description=DJB daemontools
-    
     After=sysinit.target
 
     [Service]
