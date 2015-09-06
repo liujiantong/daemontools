@@ -4,27 +4,27 @@ http://cr.yp.to/daemontools.html
 
 # Installation:
 
-## Using the traditional SysV-init it is most easy to launch the daemontools processes:
-* Put the line (completed by package/install already) at the end of /etc/inittab.
+### Using the traditional SysV-init it is most easy to launch the daemontools processes:
+1. Put the line (completed by package/install already) at the end of /etc/inittab.
 SV:12345:respawn:/command/svscanboot
 
 
-* $ initctl reload-configuration
-* $ initctl start svscan
+2. $ initctl reload-configuration
+3. $ initctl start svscan
 
-## Some latest Linux (actual "linux-only") distros switch to systemd. Install daemontools as following:
+### Some latest Linux (actual "linux-only") distros switch to systemd. Install daemontools as following:
 
-$ cat /usr/lib/systemd/system/daemontools.service
-[Unit]
-Description=DJB daemontools
-After=sysinit.target
+1. $ cat /usr/lib/systemd/system/daemontools.service
+  [Unit]
+  Description=DJB daemontools
+  After=sysinit.target
 
-[Service]
-ExecStart=/command/svscanboot
-Restart=always
+  [Service]
+  ExecStart=/command/svscanboot
+  Restart=always
 
-[Install]
-WantedBy=multi-user.target
+  [Install]
+  WantedBy=multi-user.target
 
-$ systemctl enable daemontools.service
-$ systemctl start daemontools.service
+2. $ systemctl enable daemontools.service
+3. $ systemctl start daemontools.service
