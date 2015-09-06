@@ -21,7 +21,6 @@ http://cr.yp.to/daemontools.html
     [Unit]
     
     Description=DJB daemontools
-    
     After=sysinit.target
 
     [Service]
