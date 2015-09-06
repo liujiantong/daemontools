@@ -9,12 +9,12 @@ Using the traditional SysV-init it is most easy to launch the daemontools proces
 SV:12345:respawn:/command/svscanboot
 at the end of /etc/inittab. 
 
-initctl reload-configuration
-initctl start svscan
+$ initctl reload-configuration
+$ initctl start svscan
 
 Some latest Linux (actual "linux-only") distros switch to systemd. Install daemontools as following:
 
-$ cat /lib/systemd/system/daemontools.service
+$ cat /usr/lib/systemd/system/daemontools.service
 [Unit]
 Description=DJB daemontools
 After=sysinit.target
@@ -26,3 +26,5 @@ Restart=always
 [Install]
 WantedBy=multi-user.target
 
+$ systemctl enable daemontools.service
+$ systemctl start daemontools.service
