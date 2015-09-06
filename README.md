@@ -7,7 +7,8 @@ http://cr.yp.to/daemontools.html
 ## Using the traditional SysV-init it is most easy to launch the daemontools processes:
 
 1. Put the line (completed by package/install already) at the end of /etc/inittab.
-  SV:12345:respawn:/command/svscanboot
+
+>  SV:12345:respawn:/command/svscanboot
 
 
 2. $ initctl reload-configuration
