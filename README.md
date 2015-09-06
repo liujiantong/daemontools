@@ -8,7 +8,7 @@ http://cr.yp.to/daemontools.html
 
 1. Put the line (completed by package/install already) at the end of /etc/inittab.
 
->  SV:12345:respawn:/command/svscanboot
+    SV:12345:respawn:/command/svscanboot
 
 
 2. $ initctl reload-configuration
@@ -18,20 +18,16 @@ http://cr.yp.to/daemontools.html
 
 1. $ cat /usr/lib/systemd/system/daemontools.service
 
->  [Unit]
+    [Unit]
+    Description=DJB daemontools
+    After=sysinit.target
 
->  Description=DJB daemontools
+    [Service]
+    ExecStart=/command/svscanboot
+    Restart=always
 
->  After=sysinit.target
-
->  [Service]
-
->  ExecStart=/command/svscanboot
-
->  Restart=always
-
->  [Install]
->  WantedBy=multi-user.target
+    [Install]
+    WantedBy=multi-user.target
 
 2. $ systemctl enable daemontools.service
 3. $ systemctl start daemontools.service
