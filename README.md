@@ -17,7 +17,7 @@ http://cr.yp.to/daemontools.html
 ## Some latest Linux (actual "linux-only") distros switch to systemd. Launch daemontools as following:
 
 1. $ cat /usr/lib/systemd/system/daemontools.service
-
+```
     [Unit]
     
     Description=DJB daemontools
@@ -33,6 +33,7 @@ http://cr.yp.to/daemontools.html
     [Install]
     
     WantedBy=multi-user.target
+```
 
 2. $ systemctl enable daemontools.service
 3. $ systemctl start daemontools.service
