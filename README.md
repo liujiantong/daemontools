@@ -4,7 +4,16 @@ http://cr.yp.to/daemontools.html
 
 **Fixed compile error in src/conf-cc**
 
-# Launch daemontools:
+# Install daemontools
+
+1. mkdir -p /package/admin
+2. chmod 1755 /package
+3. cd /package/admin
+4. git clone https://github.com/liujiantong/daemontools.git
+5. cd daemontools/
+6. ./package/install
+
+# Launch daemontools
 
 http://www.tuxad.de/blog/archives/2011/12/31/djb_daemontools_with_upstart_or_systemd/index.html
 
@@ -16,7 +25,6 @@ it is most easy to launch the daemontools processes:
 ```
 SV:12345:respawn:/command/svscanboot
 ```
-
 2. $ initctl reload-configuration
 3. $ initctl start svscan
 
