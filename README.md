@@ -2,6 +2,8 @@ Copyright 2001
 D. J. Bernstein
 http://cr.yp.to/daemontools.html
 
+Fixed compile error in src/conf-cc
+
 # Launch daemontools:
 
 http://www.tuxad.de/blog/archives/2011/12/31/djb_daemontools_with_upstart_or_systemd/index.html
