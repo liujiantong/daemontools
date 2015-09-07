@@ -11,7 +11,7 @@ http://cr.yp.to/daemontools.html
 3. cd /package/admin
 4. git clone https://github.com/liujiantong/daemontools.git
 5. cd daemontools/
-6. ./package/install
+6. package/install
 
 # Launch daemontools
 
